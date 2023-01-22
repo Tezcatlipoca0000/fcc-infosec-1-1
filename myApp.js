@@ -1,15 +1,19 @@
 const express = require('express');
 const app = express();
+
 // Lesson 1: require the framework
 const helmet = require('helmet');
 
 // No lesson, my idea from reading the official docs. neccesary though isn't it?
 app.use(helmet());
+
 // Lesson 2: hide default express behaviour: "X-Powered-By: Express" header
 app.use(helmet.hidePoweredBy());
 // There's also an express native way of doing the same 
 // app.disable('x-powered-by');
 
+// Lesson 3: Defend from Clickjacking | avoid the site to be used in an iframe
+app.use(helmet.frameguard({action: 'deny'}));
 
 
 
