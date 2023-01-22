@@ -15,6 +15,9 @@ app.use(helmet.hidePoweredBy());
 // Lesson 3: Defend from Clickjacking | avoid the site to be used in an iframe
 app.use(helmet.frameguard({action: 'deny'}));
 
+// Lesson 4: XSS Filter. 
+// helmet.xssFilter disables browsers' buggy cross-site scripting filter 
+app.use(helmet.xssFilter());
 
 
 
