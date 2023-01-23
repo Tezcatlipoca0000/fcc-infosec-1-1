@@ -23,9 +23,9 @@ app.use(helmet.xssFilter());
 // sets the X-Content-Type-Options header to nosniff
 app.use(helmet.noSniff());
 
-
-
-
+// Lesson 6: Prevent IE from Opening Untrusted HTML with helmet.ieNoOpen()
+// sets the X-Download-Options header
+app.use(helmet.ieNoOpen());
 
 
 
