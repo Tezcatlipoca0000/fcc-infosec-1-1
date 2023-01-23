@@ -27,9 +27,9 @@ app.use(helmet.noSniff());
 // sets the X-Download-Options header
 app.use(helmet.ieNoOpen());
 
-
-
-
+// Lesson 7: Ask Browsers to Access Your Site via HTTPS Only with helmet.hsts()
+// sets the Strict-Transport-Security header
+app.use(helmet.hsts({maxAge: (90*24*60*60), force: true}));
 
 
 
