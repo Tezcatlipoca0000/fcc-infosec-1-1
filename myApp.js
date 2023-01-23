@@ -35,13 +35,16 @@ app.use(helmet.hsts({maxAge: (90*24*60*60), force: true}));
 // sets the X-DNS-Prefetch-Control header to
 app.use(helmet.dnsPrefetchControl({allow: false}));
 
-
-
-
-
-
-
-
+// Lesson 9: Disable Client-Side Caching with helmet.noCache()
+// **NOTICE** Since helmet v4.0.0 2020-08-02 helmet.noCache() has been removed --> 
+// https://github.com/helmetjs/helmet/blob/main/CHANGELOG.md#400---2020-08-02
+// It is adviced to use the nocache package on npm. -- > 
+// https://github.com/helmetjs/nocache
+// LEGACY -->
+// app.use(helmet.noCache());
+// NEW -->
+const nocache = require('nocache');
+app.use(nocache());
 
 
 
