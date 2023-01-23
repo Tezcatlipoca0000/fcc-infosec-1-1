@@ -19,8 +19,9 @@ app.use(helmet.frameguard({action: 'deny'}));
 // helmet.xssFilter disables browsers' buggy cross-site scripting filter 
 app.use(helmet.xssFilter());
 
-
-
+// Lesson 5: Avoid Inferring the Response MIME Type with helmet.noSniff()
+// sets the X-Content-Type-Options header to nosniff
+app.use(helmet.noSniff());
 
 
 
