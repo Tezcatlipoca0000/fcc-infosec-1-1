@@ -31,9 +31,9 @@ app.use(helmet.ieNoOpen());
 // sets the Strict-Transport-Security header
 app.use(helmet.hsts({maxAge: (90*24*60*60), force: true}));
 
-
-
-
+// Lesson 8: Disable DNS Prefetching with helmet.dnsPrefetchControl()
+// sets the X-DNS-Prefetch-Control header to
+app.use(helmet.dnsPrefetchControl({allow: false}));
 
 
 
