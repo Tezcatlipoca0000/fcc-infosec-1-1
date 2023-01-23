@@ -5,6 +5,7 @@ const app = express();
 const helmet = require('helmet');
 
 // No lesson, my idea from reading the official docs. neccesary though isn't it?
+// explained in lesson 11: is a shorthand for the other middleware
 app.use(helmet());
 
 // Lesson 2: hide default express behaviour: "X-Powered-By: Express" header
@@ -51,7 +52,7 @@ app.use(nocache());
 app.use(helmet.contentSecurityPolicy({
   directives: {
     defaultSrc: ["'self'"],
-    scriptSrc: ["'self'"]
+    scriptSrc: ["'self'", 'trusted-cdn.com']
   }
 }));
 
