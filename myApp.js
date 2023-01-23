@@ -42,13 +42,18 @@ app.use(helmet.dnsPrefetchControl({allow: false}));
 // https://github.com/helmetjs/nocache
 // LEGACY -->
 // app.use(helmet.noCache());
-// NEW -->
+// NEW --> (Requires instalation: 'npm install nocache')
 const nocache = require('nocache');
 app.use(nocache());
 
-
-
-
+// Lesson 10: Set a Content Security Policy with helmet.contentSecurityPolicy()
+// sets the Content-Security-Policy header
+app.use(helmet.contentSecurityPolicy({
+  directives: {
+    defaultSrc: ["'self'"],
+    scriptSrc: ["'self'"]
+  }
+}));
 
 
 
